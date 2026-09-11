@@ -1,6 +1,6 @@
 # de-lernen 🇩🇪
 
-自分専用のドイツ語学習アプリ。Next.js + SQLite (Prisma) で作られたローカルWebアプリです。
+自分専用のドイツ語学習アプリ。Next.js + PostgreSQL (Prisma) で作られたWebアプリです。PCでローカルに動かすことも、Vercelなどにデプロイしてスマホからも使うこともできます。
 
 ## 機能
 
@@ -8,20 +8,21 @@
 - **フラッシュカード**: Anki風の間隔反復(SM-2アルゴリズム)で単語を復習。カテゴリ別に絞り込み可能。
 - **作文問題**: Duolingo風に、英語の一文をドイツ語に書き換える問題。「B1-B2 一般語彙」「美術・デザイン語彙」の2カテゴリを用意(自由に追加可能)。
 - **連続学習日数(ストリーク)**: Duolingoなど他アプリの記録を「設定」ページから引き継ぎ可能。毎日フラッシュカードか作文問題を1つ以上こなすと更新されます。
+- **ストリークフリーズ**: 学習できなかった日を自動でカバーし、連続記録を守るアイテム。年6個・1年で回復。
 
-## セットアップ
+## セットアップ(ローカルで動かす)
+
+PostgreSQLのデータベースが1つ必要です。手元にPostgreSQLが無い場合は、後述の [Neon](https://neon.tech) などの無料枠を使ってもOKです(スマホ対応もするなら、どのみち後でクラウドDBが必要になります)。
 
 ```bash
 npm install
-cp .env.example .env  # DATABASE_URL を設定(初回のみ)
-npm run db:migrate    # 初回のみ: SQLiteデータベースを作成
-npm run db:seed       # サンプル単語・作文問題・ストリーク(1258日, 2026-09-11時点)を投入
+cp .env.example .env   # DATABASE_URL を自分のPostgreSQL接続文字列に書き換える
+npm run db:migrate     # 初回のみ: テーブルを作成
+npm run db:seed        # サンプル単語・作文問題・ストリーク(1258日, 2026-09-11時点)を投入
 npm run dev
 ```
 
 http://localhost:3000 を開いてください。
-
-データベースの実体は `prisma/dev.db`(SQLiteファイル)で、Gitには含まれません。バックアップしたい場合はこのファイルをコピーしてください。
 
 ## Excelの単語帳を取り込む
 
@@ -45,20 +46,58 @@ http://localhost:3000 を開いてください。
 
 「設定」ページでは残り個数・次回回復日を確認でき、他アプリからの引き継ぎ用に手動調整も可能です。
 
+## スマホから使う(Vercelへのデプロイ)
+
+このアプリをVercelにデプロイすると、発行されたURLにスマホのブラウザからアクセスするだけで、PCと同じデータ(単語帳・ストリークなど)を確認・編集できます。「ホーム画面に追加」しておくとアプリのように使えます。
+
+### 1. データベースを用意する(Vercel Postgres / Neon)
+
+1. [Vercel](https://vercel.com) にログインし、プロジェクトを作る前に(または作った後に)ダッシュボードの **Storage → Create Database → Postgres** から無料のPostgreSQLデータベースを作成する(内部的にはNeon)。
+2. 作成すると `DATABASE_URL` などの接続情報が自動的にプロジェクトの環境変数に追加されます。
+
+Vercelを使わずNeon単体(https://neon.tech)で作っても構いません。その場合は発行された接続文字列を後述の環境変数に手動で設定してください。
+
+### 2. Vercelプロジェクトを作成する
+
+1. このGitHubリポジトリ(`einblattdesign-web/de-lernen`)をVercelにインポートする(New Project → Import Git Repository)。
+2. フレームワークはNext.jsとして自動検出されます。ビルドコマンドなどは変更不要です(`package.json` の `build` スクリプトが `prisma migrate deploy && next build` になっており、デプロイのたびに自動でマイグレーションが適用されます)。
+
+### 3. 環境変数を設定する
+
+Vercelプロジェクトの **Settings → Environment Variables** で以下を設定します。
+
+| 変数名 | 説明 |
+| --- | --- |
+| `DATABASE_URL` | PostgreSQLの接続文字列(手順1で自動設定されていれば不要) |
+| `BASIC_AUTH_USER` | スマホ含め外部公開する際のログインユーザー名(任意だが強く推奨) |
+| `BASIC_AUTH_PASSWORD` | 同上のパスワード |
+
+`BASIC_AUTH_USER` / `BASIC_AUTH_PASSWORD` を設定すると、アプリ全体がHTTP Basic認証で保護されます(自分のドイツ語学習データが誰でも見える状態を防ぐためです)。ローカル開発時(`npm run dev`)はこれらの環境変数を設定しなければ認証なしで使えます。
+
+### 4. 初回デプロイとシード
+
+1. 環境変数を設定したら Deploy を実行します。ビルド時に自動でテーブルが作成されます。
+2. サンプル単語・作文問題・ストリークの初期データを入れたい場合は、ローカルの `.env` の `DATABASE_URL` を一時的に本番のものに書き換えて `npm run db:seed` を1回実行してください(実行後はローカル用の値に戻して構いません)。
+
+### 5. スマホから使う
+
+デプロイ後に発行されるURL(例: `https://de-lernen.vercel.app`)にスマホのブラウザでアクセスし、Basic認証のユーザー名・パスワードを入力します。Safari/Chromeの「ホーム画面に追加」を使うとアプリのアイコンとして使えます。PCからも同じURL・同じデータベースにアクセスするので、単語帳やストリークはPCとスマホで共有されます。
+
 ## 技術構成
 
 - Next.js (App Router) + TypeScript + Tailwind CSS
-- Prisma + SQLite(ローカルファイルDB)
+- Prisma + PostgreSQL
 - exceljs によるExcel/CSVパース
 - ブラウザ標準の Web Speech API による発音再生(APIキー不要)
+- HTTP Basic認証(`src/proxy.ts`)による簡易アクセス制限
 
 ## よく使うコマンド
 
 ```bash
 npm run dev          # 開発サーバー
-npm run build         # 本番ビルド
+npm run build         # 本番ビルド(マイグレーション適用込み)
 npm run lint          # ESLint
-npm run db:migrate    # マイグレーション作成/適用
+npm run db:migrate    # マイグレーション作成/適用(ローカル開発用)
 npm run db:seed       # サンプルデータ投入
 npm run db:studio     # Prisma Studio (DBをGUIで確認・編集)
 ```
