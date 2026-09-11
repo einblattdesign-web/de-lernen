@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
-import { getOrCreateStreak } from "@/lib/streak";
+import { MAX_FREEZES, reconcileStreak } from "@/lib/streak";
 import { diffInDays, endOfToday, today } from "@/lib/date";
 
 export const dynamic = "force-dynamic";
 
 export default async function DashboardPage() {
-  const [streak, wordCount, dueCount, categories] = await Promise.all([
-    getOrCreateStreak(),
+  const [{ state: streak, freezesUsed, streakBroken }, wordCount, dueCount, categories] = await Promise.all([
+    reconcileStreak(),
     prisma.word.count(),
     prisma.reviewCard.count({ where: { dueDate: { lt: endOfToday() } } }),
     prisma.category.findMany({
@@ -20,6 +20,17 @@ export default async function DashboardPage() {
 
   return (
     <div className="space-y-8">
+      {freezesUsed > 0 && (
+        <div className="rounded-xl bg-sky-50 border border-sky-200 text-sky-800 dark:bg-sky-950/30 dark:border-sky-900 dark:text-sky-300 px-4 py-3 text-sm">
+          🧊 ストリークフリーズを{freezesUsed}個使って、連続記録を守りました！(残り{streak.freezesAvailable}個)
+        </div>
+      )}
+      {streakBroken && (
+        <div className="rounded-xl bg-amber-50 border border-amber-200 text-amber-800 dark:bg-amber-950/30 dark:border-amber-900 dark:text-amber-300 px-4 py-3 text-sm">
+          ストリークフリーズが足りず、連続記録が途切れてしまいました。今日からまた積み上げましょう！
+        </div>
+      )}
+
       <section className="rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-500 text-white p-6 shadow-sm">
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div>
@@ -39,6 +50,9 @@ export default async function DashboardPage() {
             {streak.streakStartDate && (
               <p>開始日: {new Date(streak.streakStartDate).toISOString().slice(0, 10)}</p>
             )}
+            <p>
+              🧊 フリーズ: {streak.freezesAvailable} / {MAX_FREEZES}
+            </p>
           </div>
         </div>
       </section>

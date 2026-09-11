@@ -339,7 +339,8 @@ async function main() {
       longestStreak: streakDays,
       lastActiveDate: streakEndDate,
       streakStartDate,
-      freezesAvailable: 0,
+      freezesAvailable: 6,
+      freezesRenewedAt: streakEndDate,
     },
   });
 

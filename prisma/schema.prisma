@@ -106,7 +106,8 @@ model StreakState {
   longestStreak  Int       @default(0)
   lastActiveDate DateTime? // date (local, stored at midnight UTC) of last counted activity
   streakStartDate DateTime?
-  freezesAvailable Int     @default(0)
+  freezesAvailable Int     @default(6)
+  freezesRenewedAt DateTime? // last time freezesAvailable was topped back up to the yearly allotment
   updatedAt      DateTime  @updatedAt
 }
 
