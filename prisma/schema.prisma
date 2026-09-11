@@ -1,0 +1,117 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// A grouping for words/exercises, e.g. "B1-B2 一般語彙" or "美術・デザイン語彙"
+model Category {
+  id          String     @id @default(cuid())
+  key         String     @unique
+  name        String
+  description String?
+  words       Word[]
+  exercises   Exercise[]
+  createdAt   DateTime   @default(now())
+}
+
+// A single vocabulary entry ("単語帳")
+model Word {
+  id             String            @id @default(cuid())
+  german         String
+  englishGloss   String?
+  japaneseGloss  String?
+  partOfSpeech   String? // Nomen, Verb, Adjektiv, ...
+  gender         String? // der / die / das (Nomen only)
+  pluralForm     String?
+  ipa            String? // optional IPA pronunciation notation
+  definition     String? // dictionary-style explanation (German or Japanese)
+  notes          String?
+  category       Category?         @relation(fields: [categoryId], references: [id])
+  categoryId     String?
+  examples       ExampleSentence[]
+  reviewCard     ReviewCard?
+  sourceRow      Int? // original row number in imported spreadsheet, for traceability
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  @@index([categoryId])
+  @@index([german])
+}
+
+// Example sentence attached to a vocabulary word
+model ExampleSentence {
+  id            String   @id @default(cuid())
+  word          Word     @relation(fields: [wordId], references: [id], onDelete: Cascade)
+  wordId        String
+  german        String
+  englishGloss  String?
+  japaneseGloss String?
+  createdAt     DateTime @default(now())
+
+  @@index([wordId])
+}
+
+// A standalone English -> German translation exercise (Duolingo-style)
+model Exercise {
+  id          String     @id @default(cuid())
+  english     String
+  german      String
+  hint        String?
+  category    Category   @relation(fields: [categoryId], references: [id])
+  categoryId  String
+  attempts    Attempt[]
+  createdAt   DateTime   @default(now())
+
+  @@index([categoryId])
+}
+
+// A logged attempt at a translation exercise (for future stats / mistake review)
+model Attempt {
+  id         String   @id @default(cuid())
+  exercise   Exercise @relation(fields: [exerciseId], references: [id], onDelete: Cascade)
+  exerciseId String
+  userAnswer String
+  isCorrect  Boolean
+  createdAt  DateTime @default(now())
+
+  @@index([exerciseId])
+}
+
+// SRS (SM-2 style) state for one word, used for Anki-like flashcard review
+model ReviewCard {
+  id            String    @id @default(cuid())
+  word          Word      @relation(fields: [wordId], references: [id], onDelete: Cascade)
+  wordId        String    @unique
+  easeFactor    Float     @default(2.5)
+  intervalDays  Int       @default(0)
+  repetitions   Int       @default(0)
+  dueDate       DateTime  @default(now())
+  lastReviewedAt DateTime?
+  lastGrade     Int? // 0=again,1=hard,2=good,3=easy
+
+  @@index([dueDate])
+}
+
+// Singleton row holding the user's streak, carried over from Duolingo
+model StreakState {
+  id             Int       @id @default(1)
+  currentStreak  Int       @default(0)
+  longestStreak  Int       @default(0)
+  lastActiveDate DateTime? // date (local, stored at midnight UTC) of last counted activity
+  streakStartDate DateTime?
+  freezesAvailable Int     @default(0)
+  updatedAt      DateTime  @updatedAt
+}
+
+// One row per calendar day the user did *something* (exercise or flashcard review)
+model ActivityDay {
+  date  DateTime @id // stored as date-only (midnight UTC)
+  count Int      @default(0)
+}
