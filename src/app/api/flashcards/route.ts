@@ -1,30 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { endOfToday } from "@/lib/date";
+import { getPacedDueWordIds } from "@/lib/flashcardQueue";
 
-// Returns cards due for review today (or never reviewed) for a category.
+// Returns cards due for review today, capped so brand-new vocabulary is
+// introduced gradually (see src/lib/flashcardQueue.ts) rather than all at
+// once whenever a large batch of words is added.
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const categoryId = searchParams.get("categoryId") ?? undefined;
   const limit = Math.min(Number(searchParams.get("limit") ?? 20), 100);
-  const cutoff = endOfToday();
 
-  const words = await prisma.word.findMany({
-    where: {
-      categoryId: categoryId || undefined,
-      reviewCard: { dueDate: { lt: cutoff } },
-    },
+  const dueWordIds = await getPacedDueWordIds(categoryId);
+  const idsToLoad = dueWordIds.slice(0, limit);
+
+  const unordered = await prisma.word.findMany({
+    where: { id: { in: idsToLoad } },
     include: { examples: true, reviewCard: true, category: true },
-    orderBy: { reviewCard: { dueDate: "asc" } },
-    take: limit,
   });
+  const byId = new Map(unordered.map((w) => [w.id, w]));
+  const words = idsToLoad.map((id) => byId.get(id)!).filter(Boolean);
 
-  const dueCount = await prisma.reviewCard.count({
-    where: {
-      dueDate: { lt: cutoff },
-      ...(categoryId ? { word: { categoryId } } : {}),
-    },
-  });
-
-  return NextResponse.json({ words, dueCount });
+  return NextResponse.json({ words, dueCount: dueWordIds.length });
 }

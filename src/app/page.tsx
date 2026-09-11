@@ -1,20 +1,22 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { MAX_FREEZES, reconcileStreak } from "@/lib/streak";
-import { diffInDays, endOfToday, today } from "@/lib/date";
+import { getPacedDueWordIds } from "@/lib/flashcardQueue";
+import { diffInDays, today } from "@/lib/date";
 
 export const dynamic = "force-dynamic";
 
 export default async function DashboardPage() {
-  const [{ state: streak, freezesUsed, streakBroken }, wordCount, dueCount, categories] = await Promise.all([
+  const [{ state: streak, freezesUsed, streakBroken }, wordCount, dueWordIds, categories] = await Promise.all([
     reconcileStreak(),
     prisma.word.count(),
-    prisma.reviewCard.count({ where: { dueDate: { lt: endOfToday() } } }),
+    getPacedDueWordIds(),
     prisma.category.findMany({
       include: { _count: { select: { words: true, exercises: true } } },
       orderBy: { name: "asc" },
     }),
   ]);
+  const dueCount = dueWordIds.length;
 
   const isActiveToday = streak.lastActiveDate ? diffInDays(today(), streak.lastActiveDate) === 0 : false;
 

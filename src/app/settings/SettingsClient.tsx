@@ -15,15 +15,32 @@ export default function SettingsClient({
   maxFreezes,
   nextRenewalDate,
   daysUntilRenewal,
+  dailyNewWordLimit,
 }: {
   streak: StreakInfo;
   maxFreezes: number;
   nextRenewalDate: string;
   daysUntilRenewal: number;
+  dailyNewWordLimit: number;
 }) {
   const [form, setForm] = useState(streak);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [newWordLimit, setNewWordLimit] = useState(dailyNewWordLimit);
+  const [savingLimit, setSavingLimit] = useState(false);
+  const [savedLimit, setSavedLimit] = useState(false);
+
+  const saveNewWordLimit = async () => {
+    setSavingLimit(true);
+    setSavedLimit(false);
+    await fetch("/api/settings", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ dailyNewWordLimit: newWordLimit }),
+    });
+    setSavingLimit(false);
+    setSavedLimit(true);
+  };
 
   const save = async () => {
     setSaving(true);
@@ -129,6 +146,33 @@ export default function SettingsClient({
         >
           {saving ? "保存中..." : "保存"}
         </button>
+      </section>
+
+      <section className="rounded-xl border border-black/10 dark:border-white/10 p-4 space-y-3">
+        <h2 className="font-medium">📚 新規単語の導入ペース</h2>
+        <p className="text-sm text-gray-500">
+          単語帳に何語追加されていても、フラッシュカードで一度に新しく導入される数はここで指定した数までに抑えられます(すでに復習中のカードは制限されません)。
+          作文問題は自動的に「まだやっていない、または最近やっていない」ものから優先的に出題されます。
+        </p>
+        <label className="block text-sm">
+          <span className="text-gray-500">1日あたりの新規カード導入数</span>
+          <input
+            type="number"
+            min={1}
+            max={200}
+            className="input mt-1"
+            value={newWordLimit}
+            onChange={(e) => setNewWordLimit(Number(e.target.value))}
+          />
+        </label>
+        <button
+          onClick={saveNewWordLimit}
+          disabled={savingLimit}
+          className="rounded-lg bg-emerald-600 text-white px-4 py-2 font-medium hover:bg-emerald-700 disabled:opacity-50"
+        >
+          {savingLimit ? "保存中..." : "保存"}
+        </button>
+        {savedLimit && <p className="text-sm text-emerald-700">保存しました。</p>}
       </section>
     </div>
   );

@@ -116,3 +116,10 @@ model ActivityDay {
   date  DateTime @id // stored as date-only (midnight UTC)
   count Int      @default(0)
 }
+
+// Singleton row holding app-wide pacing preferences
+model AppSettings {
+  id                Int      @id @default(1)
+  dailyNewWordLimit Int      @default(12) // max never-reviewed flashcards introduced per day
+  updatedAt         DateTime @updatedAt
+}
