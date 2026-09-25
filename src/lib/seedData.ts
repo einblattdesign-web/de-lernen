@@ -1103,6 +1103,915 @@ const WORDS: Array<{
       },
     ],
   },
+  {
+    category: "b1b2_general",
+    german: "Fähigkeit",
+    englishGloss: "ability, skill",
+    japaneseGloss: "能力",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    pluralForm: "die Fähigkeiten",
+    definition: "die Kompetenz, etwas gut zu können",
+    examples: [
+      {
+        german: "Er hat die Fähigkeit, gut zuzuhören.",
+        englishGloss: "He has the ability to listen well.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "sich bemühen",
+    englishGloss: "to make an effort, to try hard",
+    japaneseGloss: "努力する",
+    partOfSpeech: "Verb (reflexiv)",
+    definition: "sich anstrengen, um ein Ziel zu erreichen",
+    examples: [
+      {
+        german: "Sie bemüht sich, pünktlich zu sein.",
+        englishGloss: "She makes an effort to be on time.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "Rücksicht",
+    englishGloss: "consideration, regard",
+    japaneseGloss: "配慮",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    definition: "das Verhalten, andere nicht zu stören oder zu verletzen",
+    examples: [
+      {
+        german: "Man sollte auf ältere Menschen Rücksicht nehmen.",
+        englishGloss: "One should show consideration for older people.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "beeindrucken",
+    englishGloss: "to impress",
+    japaneseGloss: "感銘を与える",
+    partOfSpeech: "Verb",
+    definition: "einen starken positiven Eindruck hinterlassen",
+    examples: [
+      {
+        german: "Der Vortrag hat alle beeindruckt.",
+        englishGloss: "The talk impressed everyone.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "Neugier",
+    englishGloss: "curiosity",
+    japaneseGloss: "好奇心",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    definition: "der Wunsch, etwas Neues zu erfahren",
+    examples: [
+      {
+        german: "Kinder haben oft große Neugier.",
+        englishGloss: "Children often have great curiosity.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "vertrauen",
+    englishGloss: "to trust",
+    japaneseGloss: "信頼する",
+    partOfSpeech: "Verb",
+    definition: "fest davon überzeugt sein, dass jemand ehrlich ist",
+    examples: [
+      {
+        german: "Ich vertraue meinen Freunden vollkommen.",
+        englishGloss: "I trust my friends completely.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "Erwartung",
+    englishGloss: "expectation",
+    japaneseGloss: "期待",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    pluralForm: "die Erwartungen",
+    definition: "das, was man von etwas oder jemandem erhofft",
+    examples: [
+      {
+        german: "Das Konzert hat meine Erwartungen übertroffen.",
+        englishGloss: "The concert exceeded my expectations.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "sich lohnen",
+    englishGloss: "to be worth it",
+    japaneseGloss: "割に合う、価値がある",
+    partOfSpeech: "Verb (reflexiv)",
+    definition: "einen positiven Nutzen bringen, der die Mühe wert ist",
+    examples: [
+      {
+        german: "Es lohnt sich, früh aufzustehen.",
+        englishGloss: "It's worth getting up early.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "Belastung",
+    englishGloss: "burden, strain",
+    japaneseGloss: "負担",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    pluralForm: "die Belastungen",
+    definition: "etwas, das körperlich oder seelisch anstrengend ist",
+    examples: [
+      {
+        german: "Die Arbeit ist eine große Belastung für ihn.",
+        englishGloss: "The work is a great burden for him.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "verfügen",
+    englishGloss: "to have at one's disposal",
+    japaneseGloss: "有する、持ち合わせる",
+    partOfSpeech: "Verb",
+    definition: "etwas besitzen oder zur Verfügung haben",
+    examples: [
+      {
+        german: "Sie verfügt über viel Erfahrung im Ausland.",
+        englishGloss: "She has a lot of experience abroad at her disposal.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "Gewohnheit",
+    englishGloss: "habit",
+    japaneseGloss: "習慣",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    pluralForm: "die Gewohnheiten",
+    definition: "etwas, das man regelmäßig und automatisch tut",
+    examples: [
+      {
+        german: "Rauchen ist eine schwer zu ändernde Gewohnheit.",
+        englishGloss: "Smoking is a habit that's hard to change.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "nachvollziehen",
+    englishGloss: "to comprehend, to understand",
+    japaneseGloss: "理解する、納得する",
+    partOfSpeech: "Verb",
+    definition: "die Gedanken oder Handlungen eines anderen verstehen können",
+    examples: [
+      {
+        german: "Ich kann seine Entscheidung nicht nachvollziehen.",
+        englishGloss: "I can't comprehend his decision.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "Grundlage",
+    englishGloss: "basis, foundation",
+    japaneseGloss: "基盤、基礎",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    pluralForm: "die Grundlagen",
+    definition: "das, worauf etwas aufgebaut ist",
+    examples: [
+      {
+        german: "Vertrauen ist die Grundlage jeder Beziehung.",
+        englishGloss: "Trust is the foundation of every relationship.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "verzögern",
+    englishGloss: "to delay",
+    japaneseGloss: "遅らせる",
+    partOfSpeech: "Verb",
+    definition: "etwas später als geplant stattfinden lassen",
+    examples: [
+      {
+        german: "Der Flug hat sich um zwei Stunden verzögert.",
+        englishGloss: "The flight was delayed by two hours.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "Vielfalt",
+    englishGloss: "diversity, variety",
+    japaneseGloss: "多様性",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    definition: "das Vorhandensein vieler unterschiedlicher Arten",
+    examples: [
+      {
+        german: "Die Vielfalt der Kulturen macht die Stadt interessant.",
+        englishGloss: "The diversity of cultures makes the city interesting.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "sich weigern",
+    englishGloss: "to refuse",
+    japaneseGloss: "拒否する",
+    partOfSpeech: "Verb (reflexiv)",
+    definition: "etwas nicht tun wollen",
+    examples: [
+      {
+        german: "Er weigert sich, die Regeln zu akzeptieren.",
+        englishGloss: "He refuses to accept the rules.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "Vorteil",
+    englishGloss: "advantage",
+    japaneseGloss: "利点",
+    partOfSpeech: "Nomen",
+    gender: "der",
+    pluralForm: "die Vorteile",
+    definition: "ein positiver Aspekt gegenüber anderen Möglichkeiten",
+    examples: [
+      {
+        german: "Homeoffice hat viele Vorteile.",
+        englishGloss: "Working from home has many advantages.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "Nachteil",
+    englishGloss: "disadvantage",
+    japaneseGloss: "欠点",
+    partOfSpeech: "Nomen",
+    gender: "der",
+    pluralForm: "die Nachteile",
+    definition: "ein negativer Aspekt gegenüber anderen Möglichkeiten",
+    examples: [
+      {
+        german: "Jede Lösung hat auch Nachteile.",
+        englishGloss: "Every solution also has disadvantages.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "sich einigen",
+    englishGloss: "to reach an agreement",
+    japaneseGloss: "合意する",
+    partOfSpeech: "Verb (reflexiv)",
+    definition: "nach einer Diskussion zu einer gemeinsamen Entscheidung kommen",
+    examples: [
+      {
+        german: "Die beiden Firmen haben sich auf einen Preis geeinigt.",
+        englishGloss: "The two companies agreed on a price.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "Ausnahme",
+    englishGloss: "exception",
+    japaneseGloss: "例外",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    pluralForm: "die Ausnahmen",
+    definition: "ein Fall, der von der Regel abweicht",
+    examples: [
+      {
+        german: "Diese Regel hat keine Ausnahme.",
+        englishGloss: "This rule has no exception.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "bevorzugen",
+    englishGloss: "to prefer",
+    japaneseGloss: "好む",
+    partOfSpeech: "Verb",
+    definition: "etwas lieber mögen als etwas anderes",
+    examples: [
+      {
+        german: "Ich bevorzuge Tee gegenüber Kaffee.",
+        englishGloss: "I prefer tea over coffee.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "Toleranz",
+    englishGloss: "tolerance",
+    japaneseGloss: "寛容",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    definition: "die Bereitschaft, andere Meinungen oder Lebensweisen zu akzeptieren",
+    examples: [
+      {
+        german: "Toleranz ist wichtig für ein friedliches Zusammenleben.",
+        englishGloss: "Tolerance is important for peaceful coexistence.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "sich beklagen",
+    englishGloss: "to complain about",
+    japaneseGloss: "不満を言う",
+    partOfSpeech: "Verb (reflexiv)",
+    definition: "seine Unzufriedenheit über etwas ausdrücken",
+    examples: [
+      {
+        german: "Er beklagt sich ständig über das Wetter.",
+        englishGloss: "He constantly complains about the weather.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "Erleichterung",
+    englishGloss: "relief",
+    japaneseGloss: "安心、安堵",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    definition: "das Gefühl, wenn eine Belastung wegfällt",
+    examples: [
+      {
+        german: "Nach der Prüfung spürte sie große Erleichterung.",
+        englishGloss: "After the exam she felt great relief.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "sich widersprechen",
+    englishGloss: "to contradict oneself, to contradict each other",
+    japaneseGloss: "矛盾する",
+    partOfSpeech: "Verb (reflexiv)",
+    definition: "etwas sagen, das im Gegensatz zu etwas anderem steht",
+    examples: [
+      {
+        german: "Seine Aussagen widersprechen sich.",
+        englishGloss: "His statements contradict each other.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "Konsequenz",
+    englishGloss: "consequence",
+    japaneseGloss: "結果、影響",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    pluralForm: "die Konsequenzen",
+    definition: "die Folge einer Handlung oder Entscheidung",
+    examples: [
+      {
+        german: "Jede Entscheidung hat Konsequenzen.",
+        englishGloss: "Every decision has consequences.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "andeuten",
+    englishGloss: "to hint, to imply",
+    japaneseGloss: "ほのめかす",
+    partOfSpeech: "Verb",
+    definition: "etwas indirekt zu verstehen geben",
+    examples: [
+      {
+        german: "Sie deutete an, dass sie kündigen möchte.",
+        englishGloss: "She hinted that she wants to quit.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "Erkenntnis",
+    englishGloss: "insight, realization",
+    japaneseGloss: "認識、洞察",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    pluralForm: "die Erkenntnisse",
+    definition: "neues Wissen oder Verständnis, das man gewonnen hat",
+    examples: [
+      {
+        german: "Diese Erkenntnis hat sein Leben verändert.",
+        englishGloss: "This insight changed his life.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "verzeihen",
+    englishGloss: "to forgive",
+    japaneseGloss: "許す",
+    partOfSpeech: "Verb",
+    definition: "jemandem einen Fehler nicht mehr übelnehmen",
+    examples: [
+      {
+        german: "Ich habe ihm seinen Fehler längst verziehen.",
+        englishGloss: "I forgave him for his mistake long ago.",
+      },
+    ],
+  },
+  {
+    category: "b1b2_general",
+    german: "Selbstständigkeit",
+    englishGloss: "independence, self-reliance",
+    japaneseGloss: "自立",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    definition: "die Fähigkeit, ohne Hilfe anderer zurechtzukommen",
+    examples: [
+      {
+        german: "Kinder lernen früh Selbstständigkeit.",
+        englishGloss: "Children learn independence early.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Farbpalette",
+    englishGloss: "color palette",
+    japaneseGloss: "配色、カラーパレット",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    pluralForm: "die Farbpaletten",
+    definition: "die Auswahl an Farben, die in einem Werk verwendet werden",
+    examples: [
+      {
+        german: "Die Farbpalette des Films wirkt sehr warm.",
+        englishGloss: "The film's color palette feels very warm.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Pinsel",
+    englishGloss: "paintbrush",
+    japaneseGloss: "筆、ブラシ",
+    partOfSpeech: "Nomen",
+    gender: "der",
+    pluralForm: "die Pinsel",
+    definition: "ein Werkzeug zum Auftragen von Farbe",
+    examples: [
+      {
+        german: "Sie reinigt ihre Pinsel nach jeder Sitzung.",
+        englishGloss: "She cleans her brushes after every session.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Leinwand",
+    englishGloss: "canvas",
+    japaneseGloss: "キャンバス",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    pluralForm: "die Leinwände",
+    definition: "der Stoff, auf dem ein Gemälde gemalt wird",
+    examples: [
+      {
+        german: "Der Künstler spannt eine neue Leinwand auf.",
+        englishGloss: "The artist stretches a new canvas.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Bildhauer",
+    englishGloss: "sculptor",
+    japaneseGloss: "彫刻家",
+    partOfSpeech: "Nomen",
+    gender: "der",
+    pluralForm: "die Bildhauer",
+    definition: "ein Künstler, der Skulpturen herstellt",
+    examples: [
+      {
+        german: "Der Bildhauer arbeitet seit Wochen an der Statue.",
+        englishGloss: "The sculptor has been working on the statue for weeks.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Skulptur",
+    englishGloss: "sculpture",
+    japaneseGloss: "彫刻",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    pluralForm: "die Skulpturen",
+    definition: "ein dreidimensionales Kunstwerk",
+    examples: [
+      {
+        german: "Die Skulptur steht mitten im Park.",
+        englishGloss: "The sculpture stands in the middle of the park.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Handwerk",
+    englishGloss: "craft, craftsmanship",
+    japaneseGloss: "手工芸、職人技",
+    partOfSpeech: "Nomen",
+    gender: "das",
+    definition: "eine praktische, oft manuelle Fertigkeit",
+    examples: [
+      {
+        german: "Möbelbau ist ein traditionelles Handwerk.",
+        englishGloss: "Furniture making is a traditional craft.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Vorlage",
+    englishGloss: "template, model",
+    japaneseGloss: "ひな形、テンプレート",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    pluralForm: "die Vorlagen",
+    definition: "ein Muster, nach dem etwas gestaltet wird",
+    examples: [
+      {
+        german: "Der Designer nutzt eine Vorlage für das Cover.",
+        englishGloss: "The designer uses a template for the cover.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Konzept",
+    englishGloss: "concept",
+    japaneseGloss: "コンセプト",
+    partOfSpeech: "Nomen",
+    gender: "das",
+    pluralForm: "die Konzepte",
+    definition: "die grundlegende Idee hinter einem Projekt",
+    examples: [
+      {
+        german: "Das Konzept der Ausstellung ist noch nicht fertig.",
+        englishGloss: "The concept for the exhibition isn't finished yet.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "verfeinern",
+    englishGloss: "to refine",
+    japaneseGloss: "洗練させる",
+    partOfSpeech: "Verb",
+    definition: "etwas durch kleine Änderungen verbessern",
+    examples: [
+      {
+        german: "Sie verfeinert ihre Technik von Jahr zu Jahr.",
+        englishGloss: "She refines her technique year by year.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Anordnung",
+    englishGloss: "arrangement",
+    japaneseGloss: "配置",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    pluralForm: "die Anordnungen",
+    definition: "die Art, wie Elemente platziert sind",
+    examples: [
+      {
+        german: "Die Anordnung der Möbel wirkt sehr durchdacht.",
+        englishGloss: "The arrangement of the furniture seems very thought-out.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Kreativität",
+    englishGloss: "creativity",
+    japaneseGloss: "創造性",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    definition: "die Fähigkeit, neue und originelle Ideen zu entwickeln",
+    examples: [
+      {
+        german: "Dieser Beruf erfordert viel Kreativität.",
+        englishGloss: "This profession requires a lot of creativity.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "originell",
+    englishGloss: "original",
+    japaneseGloss: "独創的な",
+    partOfSpeech: "Adjektiv",
+    definition: "neu und einzigartig, nicht kopiert",
+    examples: [
+      {
+        german: "Ihre Idee ist wirklich originell.",
+        englishGloss: "Her idea is really original.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Formgebung",
+    englishGloss: "shaping, design of form",
+    japaneseGloss: "造形",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    definition: "die Art, wie einem Objekt seine Form gegeben wird",
+    examples: [
+      {
+        german: "Die Formgebung der Vase ist sehr ungewöhnlich.",
+        englishGloss: "The shaping of the vase is very unusual.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Eindruck",
+    englishGloss: "impression",
+    japaneseGloss: "印象",
+    partOfSpeech: "Nomen",
+    gender: "der",
+    pluralForm: "die Eindrücke",
+    definition: "die Wirkung, die etwas auf jemanden hat",
+    examples: [
+      {
+        german: "Das Bild hinterlässt einen starken Eindruck.",
+        englishGloss: "The picture leaves a strong impression.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Farbverlauf",
+    englishGloss: "gradient",
+    japaneseGloss: "グラデーション",
+    partOfSpeech: "Nomen",
+    gender: "der",
+    pluralForm: "die Farbverläufe",
+    definition: "ein weicher Übergang zwischen mehreren Farben",
+    examples: [
+      {
+        german: "Das Poster hat einen bunten Farbverlauf.",
+        englishGloss: "The poster has a colorful gradient.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Hintergrund",
+    englishGloss: "background",
+    japaneseGloss: "背景",
+    partOfSpeech: "Nomen",
+    gender: "der",
+    pluralForm: "die Hintergründe",
+    definition: "der hintere Teil eines Bildes, hinter dem Hauptmotiv",
+    examples: [
+      {
+        german: "Der Hintergrund des Fotos ist unscharf.",
+        englishGloss: "The background of the photo is blurred.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Vordergrund",
+    englishGloss: "foreground",
+    japaneseGloss: "前景",
+    partOfSpeech: "Nomen",
+    gender: "der",
+    pluralForm: "die Vordergründe",
+    definition: "der vordere, meist wichtigste Teil eines Bildes",
+    examples: [
+      {
+        german: "Im Vordergrund sieht man eine alte Kirche.",
+        englishGloss: "In the foreground you can see an old church.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Ornament",
+    englishGloss: "ornament, decorative pattern",
+    japaneseGloss: "装飾模様",
+    partOfSpeech: "Nomen",
+    gender: "das",
+    pluralForm: "die Ornamente",
+    definition: "ein dekoratives Muster ohne praktischen Zweck",
+    examples: [
+      {
+        german: "Die Fassade ist mit filigranen Ornamenten verziert.",
+        englishGloss: "The facade is decorated with delicate ornaments.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Proportion",
+    englishGloss: "proportion",
+    japaneseGloss: "比率、プロポーション",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    pluralForm: "die Proportionen",
+    definition: "das Größenverhältnis zwischen einzelnen Teilen",
+    examples: [
+      {
+        german: "Die Proportionen der Figur wirken realistisch.",
+        englishGloss: "The proportions of the figure look realistic.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "plastisch",
+    englishGloss: "three-dimensional, plastic (in the artistic sense)",
+    japaneseGloss: "立体的な",
+    partOfSpeech: "Adjektiv",
+    definition: "räumlich wirkend, wie eine Skulptur",
+    examples: [
+      {
+        german: "Das Relief wirkt sehr plastisch.",
+        englishGloss: "The relief looks very three-dimensional.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Feinschliff",
+    englishGloss: "finishing touches",
+    japaneseGloss: "仕上げ",
+    partOfSpeech: "Nomen",
+    gender: "der",
+    definition: "die letzten, sorgfältigen Verbesserungen an einem Werk",
+    examples: [
+      {
+        german: "Das Projekt braucht noch etwas Feinschliff.",
+        englishGloss: "The project still needs some finishing touches.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Werkzeug",
+    englishGloss: "tool",
+    japaneseGloss: "道具",
+    partOfSpeech: "Nomen",
+    gender: "das",
+    pluralForm: "die Werkzeuge",
+    definition: "ein Gegenstand, der zum Arbeiten benutzt wird",
+    examples: [
+      {
+        german: "Jeder Handwerker hat sein eigenes Werkzeug.",
+        englishGloss: "Every craftsman has his own tools.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "anfertigen",
+    englishGloss: "to produce, to make",
+    japaneseGloss: "製作する",
+    partOfSpeech: "Verb",
+    definition: "etwas sorgfältig herstellen",
+    examples: [
+      {
+        german: "Der Schmied fertigt jedes Stück von Hand an.",
+        englishGloss: "The blacksmith produces every piece by hand.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Vision",
+    englishGloss: "vision",
+    japaneseGloss: "ビジョン、構想",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    pluralForm: "die Visionen",
+    definition: "eine kreative Idee oder Vorstellung von der Zukunft",
+    examples: [
+      {
+        german: "Der Architekt hat eine klare Vision für das Gebäude.",
+        englishGloss: "The architect has a clear vision for the building.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "umsetzen",
+    englishGloss: "to implement, to realize",
+    japaneseGloss: "実現する",
+    partOfSpeech: "Verb",
+    definition: "eine Idee in die Praxis bringen",
+    examples: [
+      {
+        german: "Es war schwierig, die Idee umzusetzen.",
+        englishGloss: "It was difficult to implement the idea.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Blickwinkel",
+    englishGloss: "point of view, angle",
+    japaneseGloss: "視点、アングル",
+    partOfSpeech: "Nomen",
+    gender: "der",
+    pluralForm: "die Blickwinkel",
+    definition: "die Perspektive, aus der man etwas betrachtet",
+    examples: [
+      {
+        german: "Aus diesem Blickwinkel sieht das Gebäude anders aus.",
+        englishGloss: "From this angle the building looks different.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "minimalistisch",
+    englishGloss: "minimalist",
+    japaneseGloss: "ミニマルな",
+    partOfSpeech: "Adjektiv",
+    definition: "auf das Wesentliche reduziert, schlicht",
+    examples: [
+      {
+        german: "Ihr Wohnzimmer ist sehr minimalistisch eingerichtet.",
+        englishGloss: "Her living room is furnished in a very minimalist way.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Verzierung",
+    englishGloss: "decoration, embellishment",
+    japaneseGloss: "装飾",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    pluralForm: "die Verzierungen",
+    definition: "ein zusätzliches Element, das etwas schmückt",
+    examples: [
+      {
+        german: "Die Torte hat aufwendige Verzierungen.",
+        englishGloss: "The cake has elaborate decorations.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Farbton",
+    englishGloss: "shade, hue",
+    japaneseGloss: "色合い",
+    partOfSpeech: "Nomen",
+    gender: "der",
+    pluralForm: "die Farbtöne",
+    definition: "eine bestimmte Variante einer Farbe",
+    examples: [
+      {
+        german: "Sie mischt den perfekten Farbton für die Wand.",
+        englishGloss: "She mixes the perfect shade for the wall.",
+      },
+    ],
+  },
+  {
+    category: "art_design",
+    german: "Handwerkskunst",
+    englishGloss: "craftsmanship",
+    japaneseGloss: "職人芸",
+    partOfSpeech: "Nomen",
+    gender: "die",
+    definition: "die hohe Kunstfertigkeit eines Handwerkers",
+    examples: [
+      {
+        german: "Die Handwerkskunst der alten Meister ist beeindruckend.",
+        englishGloss: "The craftsmanship of the old masters is impressive.",
+      },
+    ],
+  },
 ];
 
 const EXERCISES: Array<{ category: string; english: string; german: string; hint?: string }> = [
@@ -1467,6 +2376,312 @@ const EXERCISES: Array<{ category: string; english: string; german: string; hint
     category: "art_design",
     english: "The museum collects contemporary art.",
     german: "Das Museum sammelt zeitgenössische Kunst.",
+  },
+  {
+    category: "b1b2_general",
+    english: "He has the ability to listen well.",
+    german: "Er hat die Fähigkeit, gut zuzuhören.",
+  },
+  {
+    category: "b1b2_general",
+    english: "She makes an effort to be on time.",
+    german: "Sie bemüht sich, pünktlich zu sein.",
+    hint: "sich bemühen",
+  },
+  {
+    category: "b1b2_general",
+    english: "One should show consideration for older people.",
+    german: "Man sollte auf ältere Menschen Rücksicht nehmen.",
+  },
+  {
+    category: "b1b2_general",
+    english: "The talk impressed everyone.",
+    german: "Der Vortrag hat alle beeindruckt.",
+  },
+  {
+    category: "b1b2_general",
+    english: "Children often have great curiosity.",
+    german: "Kinder haben oft große Neugier.",
+  },
+  {
+    category: "b1b2_general",
+    english: "I trust my friends completely.",
+    german: "Ich vertraue meinen Freunden vollkommen.",
+  },
+  {
+    category: "b1b2_general",
+    english: "The concert exceeded my expectations.",
+    german: "Das Konzert hat meine Erwartungen übertroffen.",
+  },
+  {
+    category: "b1b2_general",
+    english: "It's worth getting up early.",
+    german: "Es lohnt sich, früh aufzustehen.",
+    hint: "sich lohnen",
+  },
+  {
+    category: "b1b2_general",
+    english: "The work is a great burden for him.",
+    german: "Die Arbeit ist eine große Belastung für ihn.",
+  },
+  {
+    category: "b1b2_general",
+    english: "She has a lot of experience abroad at her disposal.",
+    german: "Sie verfügt über viel Erfahrung im Ausland.",
+  },
+  {
+    category: "b1b2_general",
+    english: "Smoking is a habit that's hard to change.",
+    german: "Rauchen ist eine schwer zu ändernde Gewohnheit.",
+  },
+  {
+    category: "b1b2_general",
+    english: "I can't comprehend his decision.",
+    german: "Ich kann seine Entscheidung nicht nachvollziehen.",
+  },
+  {
+    category: "b1b2_general",
+    english: "Trust is the foundation of every relationship.",
+    german: "Vertrauen ist die Grundlage jeder Beziehung.",
+  },
+  {
+    category: "b1b2_general",
+    english: "The flight was delayed by two hours.",
+    german: "Der Flug hat sich um zwei Stunden verzögert.",
+  },
+  {
+    category: "b1b2_general",
+    english: "The diversity of cultures makes the city interesting.",
+    german: "Die Vielfalt der Kulturen macht die Stadt interessant.",
+  },
+  {
+    category: "b1b2_general",
+    english: "He refuses to accept the rules.",
+    german: "Er weigert sich, die Regeln zu akzeptieren.",
+    hint: "sich weigern",
+  },
+  {
+    category: "b1b2_general",
+    english: "Working from home has many advantages.",
+    german: "Homeoffice hat viele Vorteile.",
+  },
+  {
+    category: "b1b2_general",
+    english: "Every solution also has disadvantages.",
+    german: "Jede Lösung hat auch Nachteile.",
+  },
+  {
+    category: "b1b2_general",
+    english: "The two companies agreed on a price.",
+    german: "Die beiden Firmen haben sich auf einen Preis geeinigt.",
+    hint: "sich einigen",
+  },
+  {
+    category: "b1b2_general",
+    english: "This rule has no exception.",
+    german: "Diese Regel hat keine Ausnahme.",
+  },
+  {
+    category: "b1b2_general",
+    english: "I prefer tea over coffee.",
+    german: "Ich bevorzuge Tee gegenüber Kaffee.",
+  },
+  {
+    category: "b1b2_general",
+    english: "Tolerance is important for peaceful coexistence.",
+    german: "Toleranz ist wichtig für ein friedliches Zusammenleben.",
+  },
+  {
+    category: "b1b2_general",
+    english: "He constantly complains about the weather.",
+    german: "Er beklagt sich ständig über das Wetter.",
+    hint: "sich beklagen",
+  },
+  {
+    category: "b1b2_general",
+    english: "After the exam she felt great relief.",
+    german: "Nach der Prüfung spürte sie große Erleichterung.",
+  },
+  {
+    category: "b1b2_general",
+    english: "His statements contradict each other.",
+    german: "Seine Aussagen widersprechen sich.",
+    hint: "sich widersprechen",
+  },
+  {
+    category: "b1b2_general",
+    english: "Every decision has consequences.",
+    german: "Jede Entscheidung hat Konsequenzen.",
+  },
+  {
+    category: "b1b2_general",
+    english: "She hinted that she wants to quit.",
+    german: "Sie deutete an, dass sie kündigen möchte.",
+  },
+  {
+    category: "b1b2_general",
+    english: "This insight changed his life.",
+    german: "Diese Erkenntnis hat sein Leben verändert.",
+  },
+  {
+    category: "b1b2_general",
+    english: "I forgave him for his mistake long ago.",
+    german: "Ich habe ihm seinen Fehler längst verziehen.",
+  },
+  {
+    category: "b1b2_general",
+    english: "Children learn independence early.",
+    german: "Kinder lernen früh Selbstständigkeit.",
+  },
+  {
+    category: "art_design",
+    english: "The film's color palette feels very warm.",
+    german: "Die Farbpalette des Films wirkt sehr warm.",
+  },
+  {
+    category: "art_design",
+    english: "She cleans her brushes after every session.",
+    german: "Sie reinigt ihre Pinsel nach jeder Sitzung.",
+  },
+  {
+    category: "art_design",
+    english: "The artist stretches a new canvas.",
+    german: "Der Künstler spannt eine neue Leinwand auf.",
+  },
+  {
+    category: "art_design",
+    english: "The sculptor has been working on the statue for weeks.",
+    german: "Der Bildhauer arbeitet seit Wochen an der Statue.",
+  },
+  {
+    category: "art_design",
+    english: "The sculpture stands in the middle of the park.",
+    german: "Die Skulptur steht mitten im Park.",
+  },
+  {
+    category: "art_design",
+    english: "Furniture making is a traditional craft.",
+    german: "Möbelbau ist ein traditionelles Handwerk.",
+  },
+  {
+    category: "art_design",
+    english: "The designer uses a template for the cover.",
+    german: "Der Designer nutzt eine Vorlage für das Cover.",
+  },
+  {
+    category: "art_design",
+    english: "The concept for the exhibition isn't finished yet.",
+    german: "Das Konzept der Ausstellung ist noch nicht fertig.",
+  },
+  {
+    category: "art_design",
+    english: "She refines her technique year by year.",
+    german: "Sie verfeinert ihre Technik von Jahr zu Jahr.",
+  },
+  {
+    category: "art_design",
+    english: "The arrangement of the furniture seems very thought-out.",
+    german: "Die Anordnung der Möbel wirkt sehr durchdacht.",
+  },
+  {
+    category: "art_design",
+    english: "This profession requires a lot of creativity.",
+    german: "Dieser Beruf erfordert viel Kreativität.",
+  },
+  {
+    category: "art_design",
+    english: "Her idea is really original.",
+    german: "Ihre Idee ist wirklich originell.",
+  },
+  {
+    category: "art_design",
+    english: "The shaping of the vase is very unusual.",
+    german: "Die Formgebung der Vase ist sehr ungewöhnlich.",
+  },
+  {
+    category: "art_design",
+    english: "The picture leaves a strong impression.",
+    german: "Das Bild hinterlässt einen starken Eindruck.",
+  },
+  {
+    category: "art_design",
+    english: "The poster has a colorful gradient.",
+    german: "Das Poster hat einen bunten Farbverlauf.",
+  },
+  {
+    category: "art_design",
+    english: "The background of the photo is blurred.",
+    german: "Der Hintergrund des Fotos ist unscharf.",
+  },
+  {
+    category: "art_design",
+    english: "In the foreground you can see an old church.",
+    german: "Im Vordergrund sieht man eine alte Kirche.",
+  },
+  {
+    category: "art_design",
+    english: "The facade is decorated with delicate ornaments.",
+    german: "Die Fassade ist mit filigranen Ornamenten verziert.",
+  },
+  {
+    category: "art_design",
+    english: "The proportions of the figure look realistic.",
+    german: "Die Proportionen der Figur wirken realistisch.",
+  },
+  {
+    category: "art_design",
+    english: "The relief looks very three-dimensional.",
+    german: "Das Relief wirkt sehr plastisch.",
+  },
+  {
+    category: "art_design",
+    english: "The project still needs some finishing touches.",
+    german: "Das Projekt braucht noch etwas Feinschliff.",
+  },
+  {
+    category: "art_design",
+    english: "Every craftsman has his own tools.",
+    german: "Jeder Handwerker hat sein eigenes Werkzeug.",
+  },
+  {
+    category: "art_design",
+    english: "The blacksmith produces every piece by hand.",
+    german: "Der Schmied fertigt jedes Stück von Hand an.",
+  },
+  {
+    category: "art_design",
+    english: "The architect has a clear vision for the building.",
+    german: "Der Architekt hat eine klare Vision für das Gebäude.",
+  },
+  {
+    category: "art_design",
+    english: "It was difficult to implement the idea.",
+    german: "Es war schwierig, die Idee umzusetzen.",
+  },
+  {
+    category: "art_design",
+    english: "From this angle the building looks different.",
+    german: "Aus diesem Blickwinkel sieht das Gebäude anders aus.",
+  },
+  {
+    category: "art_design",
+    english: "Her living room is furnished in a very minimalist way.",
+    german: "Ihr Wohnzimmer ist sehr minimalistisch eingerichtet.",
+  },
+  {
+    category: "art_design",
+    english: "The cake has elaborate decorations.",
+    german: "Die Torte hat aufwendige Verzierungen.",
+  },
+  {
+    category: "art_design",
+    english: "She mixes the perfect shade for the wall.",
+    german: "Sie mischt den perfekten Farbton für die Wand.",
+  },
+  {
+    category: "art_design",
+    english: "The craftsmanship of the old masters is impressive.",
+    german: "Die Handwerkskunst der alten Meister ist beeindruckend.",
   },
 ];
 
